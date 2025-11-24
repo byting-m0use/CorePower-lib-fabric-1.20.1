@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "origins",
+	"version": "0.4",
+	"name": "Origins",
+	"description": "The fabric version of my mod Origins, acting as the backbone for my fabric based superhero mods.",
+	"authors": [
+		"ByteM0use"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/origins/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.bytem0use.origins.Origins"
+		],
+      "client": [
+        "net.bytem0use.origins.client.OriginsClient"
+      ],
+		"fabric-datagen": [
+			"net.bytem0use.origins.OriginsDataGenerator"
+		]
+	},
+	"mixins": [
+		"origins.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+        "fabric-key-binding-api-v1": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
