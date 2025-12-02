@@ -3,7 +3,6 @@ package net.bytem0use.origins.client;
 import net.bytem0use.origins.Origins;
 import net.bytem0use.origins.api.OriginsAbility;
 import net.bytem0use.origins.api.type.AbilityType;
-import net.bytem0use.origins.tester.ClimbingAbility;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -40,9 +39,5 @@ public class AbilityRegistry {
             Origins.LOGGER.debug("(SERVER): {}", ability.getAbilityID());
             ABILITY_MAP.put(ability.abilityID, ability);
         }
-    }
-
-    public static void initServer() {
-        registerAbility(new ClimbingAbility("climbing", AbilityType.TOGGLE));
     }
 }
