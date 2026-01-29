@@ -27,12 +27,12 @@ repositories {
     }
 
     //maven {
-        //url "https://jitpack.io"
+        //url "https://amblelabs.dev/maven"
 
-        //metadataSources {
-            //artifact() // Look directly for artifact
+       // metadataSources {
+           // artifact() // Look directly for artifact
         //}
-   // }
+    //}
 
 }
 
@@ -54,9 +54,9 @@ dependencies {
     modImplementation("software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}")
     implementation("com.eliotlash.mclib:mclib:20")
 
-    //modImplementation("com.github.amblelabs:modkit:${project.modkit_version}") {
+    //modImplementation("dev.amble:lib:${project.modkit_version}") {
         //exclude(group: "net.fabricmc.fabric-api")
-   // }
+    //}
 	
 }
 

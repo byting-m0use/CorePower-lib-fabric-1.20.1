@@ -3,7 +3,8 @@
 	"package": "net.bytem0use.origins.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+        "StatusEffectInstanceMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
