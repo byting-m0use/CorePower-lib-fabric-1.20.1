@@ -1,4 +1,4 @@
-package net.bytem0use.origins.mixin;
+package net.bytem0use.core_power.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

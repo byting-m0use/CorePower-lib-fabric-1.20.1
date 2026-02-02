@@ -1,6 +1,6 @@
-package net.bytem0use.origins.mixin;
+package net.bytem0use.core_power.mixin;
 
-import net.bytem0use.origins.api.PowerAPI;
+import net.bytem0use.core_power.api.PowerAPI;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import org.spongepowered.asm.mixin.Mixin;

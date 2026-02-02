@@ -1,7 +1,7 @@
-package net.bytem0use.origins.tester;
+package net.bytem0use.core_power.tester;
 
-import net.bytem0use.origins.api.PowerAPI;
-import net.bytem0use.origins.api.type.PowersTag;
+import net.bytem0use.core_power.api.PowerAPI;
+import net.bytem0use.core_power.api.type.PowersTag;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class ArachnidEffect extends PowerAPI {

@@ -1,4 +1,4 @@
-package net.bytem0use.origins.api.type;
+package net.bytem0use.core_power.api.type;
 
 public enum PowersTag {
     DESTRUCTIVE,

@@ -1,14 +1,14 @@
-package net.bytem0use.origins;
+package net.bytem0use.core_power;
 
-import net.bytem0use.origins.attributes.OriginsAttributes;
-import net.bytem0use.origins.tester.ModEffects;
+import net.bytem0use.core_power.attributes.CorePowerAttributes;
+import net.bytem0use.core_power.tester.ModEffects;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
 
-public class Origins implements ModInitializer {
+public class CorePower implements ModInitializer {
 	public static final String MOD_ID = "origins";
 
 	// This logger is used to write text to the console and the log file.
@@ -20,7 +20,7 @@ public class Origins implements ModInitializer {
 	public void onInitialize() {
         GeckoLib.initialize();
 
-        OriginsAttributes.registerAttributes();
+        CorePowerAttributes.registerAttributes();
 
         ModEffects.registerEffects();
 

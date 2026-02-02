@@ -1,6 +1,6 @@
-package net.bytem0use.origins.api;
+package net.bytem0use.core_power.api;
 
-import net.bytem0use.origins.api.type.PowersTag;
+import net.bytem0use.core_power.api.type.PowersTag;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
@@ -12,4 +12,6 @@ public class PowerAPI extends StatusEffect {
     public PowerAPI(StatusEffectCategory category, int color, PowersTag pTag) {
         super(category, color);
     }
+
+
 }
