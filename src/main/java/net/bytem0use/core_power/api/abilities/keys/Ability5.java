@@ -1,0 +1,4 @@
+package net.bytem0use.core_power.api.abilities.keys;
+
+public class Ability5 {
+}
