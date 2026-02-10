@@ -1,7 +1,7 @@
 package net.bytem0use.core_power;
 
 import net.bytem0use.core_power.attributes.CorePowerAttributes;
-import net.bytem0use.core_power.tester.ModEffects;
+import net.bytem0use.core_power.tester.CorePowerModEffects;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -22,6 +22,6 @@ public class CorePower implements ModInitializer {
 
         CorePowerAttributes.registerAttributes();
 
-        ModEffects.registerEffects();
+        CorePowerModEffects.registerEffects();
 	}
 }

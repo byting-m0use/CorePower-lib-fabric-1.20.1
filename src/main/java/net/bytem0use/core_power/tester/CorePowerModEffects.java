@@ -8,7 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class ModEffects {
+public class CorePowerModEffects {
 
     private static StatusEffect registerPower(String name, StatusEffect power) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(CorePower.MOD_ID, name), power);
