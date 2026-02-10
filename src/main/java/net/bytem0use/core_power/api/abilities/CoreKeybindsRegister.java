@@ -7,6 +7,7 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
+//idea is to make it so that externally I could assign each keybind an action
 public class CoreKeybindsRegister {
     public static final String KEY_CATEGORY_CORE = "key.category.origins.origins_mod";
     public static final String ABILITY_1 = "key.origins.ability_1";

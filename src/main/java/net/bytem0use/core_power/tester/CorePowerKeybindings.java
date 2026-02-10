@@ -22,7 +22,7 @@ public class CorePowerKeybindings {
 
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if( climb.wasPressed() && client.player.hasStatusEffect(ModEffects.ARACHNID_EFFECT)) {
+            if( climb.wasPressed() && client.player.hasStatusEffect(CorePowerModEffects.ARACHNID_EFFECT)) {
 
                 assert client.player != null;
                 client.player.sendMessage(Text.literal("It was pressed. Woo"));
