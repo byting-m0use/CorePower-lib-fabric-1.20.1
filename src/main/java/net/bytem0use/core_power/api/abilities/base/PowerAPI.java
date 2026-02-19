@@ -8,27 +8,26 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public abstract class PowerAPI extends StatusEffect {
-    public final PowersTag tag;
+    public static PowersTag tag;
+    public PassiveList passiveList;
 
     public PowerAPI(StatusEffectCategory category, int color, PowersTag pTag) {
         super(category, color);
-        this.tag = pTag;
+        tag = pTag;
     }
 
-    public PowerAPI(StatusEffectCategory category, int color, PassiveTags tagP, PowersTag tag) {
+    public PowerAPI(StatusEffectCategory category, int color, PowersTag tag, PassiveList passive) {
         super(category, color);
-        this.tag = tag;
+        PowerAPI.tag = tag;
     }
 
-    public static void getTag() {
-        StatusEffectCategory beneficial = StatusEffectCategory.BENEFICIAL;
+    public PowerAPI(StatusEffectCategory category, int color, PowersTag tag, PassiveList passive, PassiveList passive2) {
+        super(category, color);
+        PowerAPI.tag = tag;
     }
 
-    public static void hasTag(StatusEffect effect, PowersTag pTag, PowerAPI api) {
-    }
-
-    public PowerAPI addPassive(PassiveList passive) {
-        return this;
+    public boolean hasPassiveTag(PassiveList passive) {
+        return this.passiveList == passive;
     }
 
 

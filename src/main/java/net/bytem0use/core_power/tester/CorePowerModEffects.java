@@ -17,7 +17,7 @@ public class CorePowerModEffects {
     }
 
     public static final StatusEffect SPEEDSTER = registerPower("speedster",
-            new SpeedsterEffect(StatusEffectCategory.BENEFICIAL, 55550, PowersTag.ENHANCER).addPassive(PassiveList.IMPACT_DAMAGE));
+            new SpeedsterEffect(StatusEffectCategory.BENEFICIAL, 55550, PowersTag.ENHANCER, PassiveList.IMPACT_DAMAGE));
 
     public static void registerEffects() {
         CorePower.LOGGER.info("Registering Mod Effects for " + CorePower.MOD_ID);
