@@ -5,11 +5,15 @@ import net.bytem0use.core_power.api.abilities.base.PowerAPI;
 import net.bytem0use.core_power.api.type.PassiveList;
 import net.bytem0use.core_power.api.type.PassiveTags;
 import net.bytem0use.core_power.api.type.PowersTag;
+import net.bytem0use.core_power.core.CorePowerDamageSources;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.World;
 
 public class ImpactDamagePassive extends CorePassive {
 
@@ -25,9 +29,18 @@ public class ImpactDamagePassive extends CorePassive {
         return level > 10 ? level - 10 : 1 + random.nextInt(4);
     }
 
-    public static void sprintingCollisionWithSpeedster(LivingEntity entity, ClientPlayerEntity client) {
-        if(client.hasStatusEffect(CorePowerModEffects.SPEEDSTER) && client.isSprinting() && client.collidesWith(entity)) {
+    @Override
+    public boolean hasPassiveTag(PassiveList passive) {
+        return super.hasPassiveTag(passive);
+    }
 
+    public static void sprintingCollisionWithSpeedster(LivingEntity entity, ClientPlayerEntity client, PowerAPI power, World world) {
+        if((client.hasStatusEffect(CorePowerModEffects.SPEEDSTER) && client.isSprinting() && client.collidesWith(entity) && power.hasPassiveTag(PassiveList.IMPACT_DAMAGE))) {
+            DamageSource damageSource = new DamageSource(
+                    world.getRegistryManager()
+                            .get(RegistryKeys.DAMAGE_TYPE)
+                            .entryOf(CorePowerDamageSources.HIGH_SPEED_IMPACT_DAMAGE));
+            entity.damage(damageSource, 5.0f);
         }
     }
 

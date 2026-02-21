@@ -25,6 +25,9 @@ public class CorePowerDamageSources extends DamageSource {
     public static final RegistryKey<DamageType> HIGH_SPEED_AIR_FRICTION_DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
             new Identifier("core_power", "high_speed_air_friction"));
 
+    public static final RegistryKey<DamageType> HIGH_SPEED_IMPACT_DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
+            new Identifier("core_power", "high_speed_impact_damage"));
+
 
     public CorePowerDamageSources(RegistryEntry<DamageType> type, @Nullable Entity source, @Nullable Entity attacker) {
         super(type, source, attacker);

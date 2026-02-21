@@ -10,7 +10,7 @@ public class CorePassive extends PowerAPI{
 
 
     public CorePassive(StatusEffectCategory category, int color, PassiveTags tagP, PowersTag tag) {
-        super(category, color, tagP, tag);
+        super(category, color, tag);
     }
 
     public void getPassive(CorePassive passive) {
