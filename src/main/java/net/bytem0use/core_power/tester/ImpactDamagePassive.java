@@ -35,7 +35,7 @@ public class ImpactDamagePassive extends CorePassive {
     }
 
     public static void sprintingCollisionWithSpeedster(LivingEntity entity, ClientPlayerEntity client, PowerAPI power, World world) {
-        if((client.hasStatusEffect(CorePowerModEffects.SPEEDSTER) && client.isSprinting() && client.collidesWith(entity) && power.hasPassiveTag(PassiveList.IMPACT_DAMAGE))) {
+        if(client.hasStatusEffect(CorePowerModEffects.SPEEDSTER) && client.isSprinting() && client.collidesWith(entity) && power.hasPassiveTag(PassiveList.IMPACT_DAMAGE)){
             DamageSource damageSource = new DamageSource(
                     world.getRegistryManager()
                             .get(RegistryKeys.DAMAGE_TYPE)

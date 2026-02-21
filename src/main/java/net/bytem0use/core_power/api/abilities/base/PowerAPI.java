@@ -29,8 +29,4 @@ public abstract class PowerAPI extends StatusEffect {
     public boolean hasPassiveTag(PassiveList passive) {
         return this.passiveList == passive;
     }
-
-
-
-
 }
