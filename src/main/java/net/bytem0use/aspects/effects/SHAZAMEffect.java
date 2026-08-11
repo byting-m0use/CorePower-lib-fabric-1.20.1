@@ -2,7 +2,12 @@ package net.bytem0use.aspects.effects;
 
 import net.bytem0use.common.api.abilities.base.PowerAPI;
 import net.bytem0use.common.api.type.PowersTag;
+import net.bytem0use.common.utils.FlyingState;
+import net.bytem0use.common.utils.PlayerFlightInterface;
 import net.bytem0use.mixin.player.PlayerAbilitiesAccessor;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -10,8 +15,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
+
+import java.awt.*;
 
 public class SHAZAMEffect extends PowerAPI {
 
@@ -26,6 +34,7 @@ public class SHAZAMEffect extends PowerAPI {
         if(entity instanceof PlayerEntity player) {
             if(entity instanceof ServerPlayerEntity serverPlayer){
             ServerWorld world = serverPlayer.getServerWorld();
+            PlayerFlightInterface flyingPlayer = (PlayerFlightInterface) player;
 
             //PlayerAbilities playerAbilities = player.getAbilities();
 
@@ -72,6 +81,11 @@ public class SHAZAMEffect extends PowerAPI {
                 //world.spawnParticles(ParticleTypes.END_ROD, player.getX() - f11, player.getY() + (double) f9, player.getZ() - f8, 1, player.getHeadYaw() * 0.05D, player.getHeadYaw(), player.getHeadYaw() * 0.05D, 0.0D);
 
                 world.spawnParticles(ParticleTypes.FLAME, player.getX()+ f11 + player.getHeadYaw(), player.getY() + f12 + player.getHeadYaw(), player.getZ() + f9 + player.getHeadYaw(), 1, random.nextGaussian() * 0.05D, -0.25, random.nextGaussian() * 0.05D, 0.0D);
+
+                if(player.getAbilities().allowFlying && flyingPlayer.getFlightState() == FlyingState.FLYING) {
+                    serverPlayer.sendMessage(Text.of("I'M FLYING!!"));
+
+                }
             }
             }
             player.sendAbilitiesUpdate();

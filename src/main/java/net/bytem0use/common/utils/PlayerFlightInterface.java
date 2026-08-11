@@ -17,4 +17,8 @@ public interface PlayerFlightInterface {
     int getFlightSpeed();
 
     void setFlightSpeed(int var1);
+
+    boolean isHovering();
+
+    void getIsHovering(boolean bool2);
 }
