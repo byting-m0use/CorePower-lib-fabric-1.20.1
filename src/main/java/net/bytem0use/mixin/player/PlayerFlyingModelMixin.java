@@ -1,5 +1,6 @@
 package net.bytem0use.mixin.player;
 
+import net.bytem0use.common.utils.PlayerFlightInterface;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelPart;

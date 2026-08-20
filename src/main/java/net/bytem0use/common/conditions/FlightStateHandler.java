@@ -14,18 +14,12 @@ public abstract class FlightStateHandler implements PlayerFlightInterface{
     public static void register() {
         ClientTickEvents.END_CLIENT_TICK.register((ClientTickEvents.EndTick)(client) -> {
             if(client.player != null) {
-                PlayerFlightInterface flyingPlayer = (PlayerFlightInterface) client.player;
+                PlayerFlightInterface flyingPlayer = (PlayerFlightInterface)client.player;
 
                 PlayerEntity player = client.player;
                 PlayerAbilities abilities = client.player.getAbilities();
 
-                if(client.player.getAbilities().allowFlying == abilities.flying) {
-                    flyingPlayer.setFlightState(FlyingState.FLYING);
-                }
-
-                if(client.player.getAbilities().allowFlying != abilities.flying) {
-                    flyingPlayer.setFlightState(FlyingState.GROUND);
-                }
+                FlyingState state = client.player.getAbilities().allowFlying == abilities.flying ? FlyingState.FLYING : FlyingState.GROUND;
             }
 
         });

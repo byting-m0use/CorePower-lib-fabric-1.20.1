@@ -11,6 +11,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -36,7 +37,7 @@ public class SHAZAMEffect extends PowerAPI {
             ServerWorld world = serverPlayer.getServerWorld();
             PlayerFlightInterface flyingPlayer = (PlayerFlightInterface) player;
 
-            //PlayerAbilities playerAbilities = player.getAbilities();
+            PlayerAbilities playerAbilities = player.getAbilities();
 
             Random random = world.getRandom();
 
